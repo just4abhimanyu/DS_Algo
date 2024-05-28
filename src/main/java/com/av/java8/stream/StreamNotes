@@ -1,0 +1,2 @@
+1. boxed() : The boxed() method is useful when you need to perform operations that require streams of objects (boxed types) instead of primitives.
+For example, you might want to use methods like map, filter, or reduce that expect streams of objects. In such cases, you can first convert the stream of primitives to a stream of boxed objects using the boxed() method.
