@@ -22,9 +22,9 @@ public class StreamFlatMap {
                                                 );
 
         List<String> strList = personList.stream()
-                                .map(p -> p.getName())
+                                .map(Person::getName)
                                 .flatMap(name -> Arrays.stream(name.split("")))
-                                .collect(Collectors.toList());
+                                .toList();
         System.out.println("Char Array :"+strList);
 
     }

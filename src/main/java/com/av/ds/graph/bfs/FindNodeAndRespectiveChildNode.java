@@ -30,11 +30,7 @@ public class FindNodeAndRespectiveChildNode {
 
         if (root == null) { return; }
 
-        if (result.size() == level) {
-            result.add(root.val);
-        }else {
-            result.add(root.val);
-        }
+        result.add(root.val);
         printSubTree(root.left , result, level +1);
         printSubTree(root.right , result, level +1);
     }

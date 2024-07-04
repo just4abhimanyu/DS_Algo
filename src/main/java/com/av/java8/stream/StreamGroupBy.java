@@ -15,7 +15,7 @@ public class StreamGroupBy {
 
         // Printing the result
         peopleByAge.forEach((age, group) -> {
-            System.out.println("Age: " + age);
+           System.out.println("Age: " + age);
             group.forEach(System.out::println);
             System.out.println("----------------------");
         });

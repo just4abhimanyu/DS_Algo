@@ -33,11 +33,14 @@ public class TwoSum {
     private static List<int[]> getAllPairOfTwoSum(int[] arr , int target){
         Map<Integer,Integer> collect = new HashMap<>();
         List<int[]> result = new ArrayList<>();
+
         for(int i = 0; i < arr.length; i++){
             int secondEle = target - arr[i];
+
             if (collect.containsKey(secondEle)){
                 result.add(new int[]{collect.get(secondEle), i});
             }
+
             collect.put(arr[i] , i);
         }
         System.out.println("==========================================");

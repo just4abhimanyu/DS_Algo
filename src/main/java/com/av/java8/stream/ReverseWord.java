@@ -18,9 +18,6 @@ public class ReverseWord {
         String[] strArr= str.split("\\s+");
         String reversedWords = IntStream.range(0 , strArr.length).mapToObj(index -> strArr[strArr.length - index - 1]).collect(Collectors.joining(" "));
         System.out.println("Reversed 2 String :"+reversedWords);
-
-
-
     }
     public static void main(String[] args) {
         String str = "Hello world";

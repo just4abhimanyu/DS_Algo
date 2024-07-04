@@ -1,42 +1,56 @@
-import java.util.Comparator;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Test {
- /*
-    nput = {1, 2, 1, 3, 3, 1, 4, 5}
-output = {1, 1, 1, 3, 3, 2, 4, 5}
-     */
-    private static int[] getMaxOccuranceArray(int[] arr){
 
-        Map<Integer, Integer> map = new TreeMap<>((a,b)->(b-a));
+    private static void printSeriasOfNum(int num , int upTo){
 
-        for (int data : arr){
-            if(map.containsKey(data)){
-                map.put(data,map.get(data) + 1);
-            }else {
-                map.put(data , 1);
-            }
+        if(num >= upTo){
+            return;
         }
-        System.out.println(map);
-        map.entrySet().stream().sorted();
-        System.out.println(map);
-        List<Integer> valueList = map.values().stream().sorted((a,b)->(b-a)).toList();
-        System.out.println(valueList);
-        System.out.println(valueList.get(0));
-        int[] resArray = new int[arr.length];
+        System.out.println(num);
+        printSeriasOfNum(num + 3 , upTo);
+    }
+    private static int printSum(String str){
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(str.charAt(i)));
+        }
+        System.out.println(sum);
+        return sum;
+    }
+    private static int printSumInt(int num){
+        int sum = 0;
 
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()){
-            int key = entry.getValue();
-
+        while (num != 0){
+            sum += num % 10;
+            num = num/10;
         }
 
-        return null;
+        System.out.println(sum);
+        return sum;
+    }
+    private static void printCharFrequency(String str){
+
+        Map<Character ,Integer> freq = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            freq.put(str.charAt(i), freq.getOrDefault(str.charAt(i) , 0) + 1);
+        }
+        System.out.println(freq);
     }
     public static void main(String[] args) {
-    int[] input = {1, 2, 1, 3, 3, 1, 4, 5};
-    getMaxOccuranceArray(input);
+        //printSeriasOfNum(1,30);
+        //printSum("34798");
+        printSumInt(34798);
 
+        String str = "abhimanyu";
+        printCharFrequency(str);
+
+        // grt/namer?="nsnd"
+        // select * from Emplyee order by salary desc 2,1;
+        //
+        // @RequestParam("name") String name)
+        // path
     }
-}
+
+}//34798
