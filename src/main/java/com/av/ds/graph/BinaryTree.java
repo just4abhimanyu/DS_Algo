@@ -1,6 +1,6 @@
 package com.av.ds.graph;
 
-import com.av.ds.linkedlist.Node;
+import com.av.ds.tree.TreeNode;
 
 import java.util.List;
 

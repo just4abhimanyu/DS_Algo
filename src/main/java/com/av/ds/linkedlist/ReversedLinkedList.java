@@ -5,10 +5,12 @@ public class ReversedLinkedList {
         private static Node reverseLinkedList(Node head ){
             Node prev = null;
             Node current = head;
-            Node next ;
+
             while (current.next != null){
-                next = current.next;
+                Node next = current.next;
                 current.next = prev;
+
+                // updating var
                 prev = current;
                 current = next;
             }

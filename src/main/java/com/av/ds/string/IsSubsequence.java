@@ -50,7 +50,7 @@ public class IsSubsequence {
     }
 
     public static void main(String[] args) {
-       String s = "abc", t = "ahbgdc";
+       String s = "abc", t = "bhagdc";
         boolean b = isSubsequence(s,t);
         if (b){
             System.out.println("String "+s+" is Substring of String "+t);

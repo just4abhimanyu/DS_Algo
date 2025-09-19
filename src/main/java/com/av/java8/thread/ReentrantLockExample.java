@@ -18,6 +18,7 @@ public class ReentrantLockExample {
     }
 
     public static void main(String[] args) {
+
         ReentrantLockExample lockExample = new ReentrantLockExample();
         Runnable task = ()->{
             for (int i = 0; i <10; i++) {

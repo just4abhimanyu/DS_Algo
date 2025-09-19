@@ -1,4 +1,4 @@
-package com.av.ds.graph;
+package com.av.ds.tree;
 
 public class TreeNode {
 
@@ -7,7 +7,7 @@ public class TreeNode {
     public TreeNode right;
 
     TreeNode() {}
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
       TreeNode(int val, TreeNode left, TreeNode right) {

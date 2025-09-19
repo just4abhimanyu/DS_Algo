@@ -5,4 +5,5 @@ import java.util.List;
 @FunctionalInterface
 public interface PrintFunctionalInterface {
     void print(List<String> list);
+    boolean equals(Object o);
 }

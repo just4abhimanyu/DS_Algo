@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class ReverseString {
     private static void reverseString(String str){
 
-        String resString = Stream.of(str).map(String -> new StringBuffer(str).reverse()).collect(Collectors.joining());
+        String resString = Stream.of(str).map(string -> new StringBuffer(string).reverse()).collect(Collectors.joining());
         System.out.println("Reversed String =>"+resString);
 
         String reverse2 = str.chars().mapToObj(c -> (char)c).reduce("",(s , c)->c+s,(s1,s2)->s2+s1);

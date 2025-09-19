@@ -14,7 +14,8 @@ public class LongestSubArrayZeroSum {
 
             sum += arr[i];
             System.out.println(sum+"<----Sum------>"+i);
-            //System.out.println(map);
+            System.out.println(map);
+
             if (sum == 0) {
                // System.out.println("====================="+i);
                 maxLength = i + 1;
@@ -26,6 +27,7 @@ public class LongestSubArrayZeroSum {
                 map.put(sum, i);
             }
         }
+        System.out.println(map);
         return maxLength;
     }
 

@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.org.practice</groupId>
-    <artifactId>DataStructureAndAlgorithm</artifactId>
+    <artifactId>DS_Algo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>DataStructureAndAlgorithm</name>
-    <description>DataStructureAndAlgorithm</description>
+    <name>DS_Algo</name>
+    <description>DS_Algo</description>
     <properties>
         <java.version>21</java.version>
     </properties>

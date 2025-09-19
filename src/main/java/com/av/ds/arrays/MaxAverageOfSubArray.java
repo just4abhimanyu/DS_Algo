@@ -8,15 +8,15 @@ public class MaxAverageOfSubArray {
 
         HashMap<Integer,Integer> map = new HashMap<>();
         int count=0;
-       // System.out.println();
-        for(int i=0;i<nums.length;i++){
-            if(map.containsKey(k - nums[i])){
+        for (int num : nums) {
+
+            if (map.containsKey(k - num)) {
                 count++;
-                map.put(k - nums[i], map.get(k - nums[i])-1);
-                if(map.get(k - nums[i]) == 0)
-                    map.remove(k - nums[i]);
-            }else{
-                map.put(nums[i], map.getOrDefault(nums[i],0) + 1);
+                map.put(k - num, map.get(k - num) - 1);
+                if (map.get(k - num) == 0)
+                    map.remove(k - num);
+            } else {
+                map.put(num, map.getOrDefault(num, 0) + 1);
             }
         }
         System.out.println("Map="+map);

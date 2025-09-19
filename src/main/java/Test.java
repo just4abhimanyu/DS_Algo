@@ -1,56 +1,51 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+class LinkedList {
+    LinkedList previous;
+    LinkedList next;
+    int data;
+
+    LinkedList(int data) {
+        next = null;
+        previous = null;
+        this.data = data;
+    }
+
+}
+
+class CustomStack {
+    private int[] stack = null;
+    private int top = -1;
+    CustomStack(int top){
+        this.top = top;
+    }
+
+
+
+
+}
 public class Test {
-
-    private static void printSeriasOfNum(int num , int upTo){
-
-        if(num >= upTo){
-            return;
+private int[] stack = null;
+    public static LinkedList addNode(int data , LinkedList head) {
+        LinkedList newNode = new LinkedList(data);
+        LinkedList temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
         }
-        System.out.println(num);
-        printSeriasOfNum(num + 3 , upTo);
+        temp.next = newNode;
+        return head;
     }
-    private static int printSum(String str){
-        int sum = 0;
-        for (int i = 0; i < str.length(); i++) {
-            sum += Integer.parseInt(String.valueOf(str.charAt(i)));
-        }
-        System.out.println(sum);
-        return sum;
-    }
-    private static int printSumInt(int num){
-        int sum = 0;
 
-        while (num != 0){
-            sum += num % 10;
-            num = num/10;
-        }
-
-        System.out.println(sum);
-        return sum;
+    private static void convertLinkedListToStack(LinkedList head) {
+        LinkedList temp = head;
     }
-    private static void printCharFrequency(String str){
 
-        Map<Character ,Integer> freq = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-            freq.put(str.charAt(i), freq.getOrDefault(str.charAt(i) , 0) + 1);
-        }
-        System.out.println(freq);
-    }
     public static void main(String[] args) {
-        //printSeriasOfNum(1,30);
-        //printSum("34798");
-        printSumInt(34798);
+        LinkedList head = new LinkedList(1);
+        LinkedList linkedList = addNode(10, head);
+        LinkedList linkedList1 = addNode(20, linkedList);
+        LinkedList linkedList2 = addNode(30, linkedList1);
 
-        String str = "abhimanyu";
-        printCharFrequency(str);
 
-        // grt/namer?="nsnd"
-        // select * from Emplyee order by salary desc 2,1;
-        //
-        // @RequestParam("name") String name)
-        // path
     }
-
-}//34798
+}

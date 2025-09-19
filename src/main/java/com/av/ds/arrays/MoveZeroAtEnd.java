@@ -41,7 +41,7 @@ public class MoveZeroAtEnd {
     }
 
     public static void main(String[] args) {
-        int[] arr = {0};
+        int[] arr = {0,8,9};
         moveZeroes_OMS(arr);
         System.out.println(Arrays.toString(arr));
     }

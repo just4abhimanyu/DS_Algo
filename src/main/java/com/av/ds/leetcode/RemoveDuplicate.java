@@ -10,9 +10,8 @@ public class RemoveDuplicate {
 
         for( int j = 1; j < len; j++ ){
 
-            if(nums[i]!=nums[j]){
-                i++;
-                nums[i]=nums[j];
+            if( nums[i] != nums[j] ){
+                nums[++i]=nums[j];
             }
             System.out.println(Arrays.toString(nums));
         }

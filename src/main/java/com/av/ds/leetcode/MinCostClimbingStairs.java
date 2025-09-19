@@ -11,8 +11,10 @@ public class MinCostClimbingStairs {
         int twoStepBefore = cost[0];
         int oneStepBefore = cost[1];
         int currentCost = 0;
-        for (int i = 3; i < cost.length; i++) {
-            System.out.println("twoStepBefore :"+twoStepBefore+" oneStepBefore :"+oneStepBefore);
+        for (int i = 2; i < cost.length; i++) {
+
+            System.out.println("twoStepBefore :"+twoStepBefore+" oneStepBefore :"+oneStepBefore+" currentCost :"+currentCost);
+
             currentCost = cost[i] + Math.min(twoStepBefore , oneStepBefore);
             twoStepBefore = oneStepBefore;
             oneStepBefore = currentCost;

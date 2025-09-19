@@ -1,7 +1,7 @@
 package com.av.ds.graph.bfs;
 
 import com.av.ds.graph.BinaryTree;
-import com.av.ds.graph.TreeNode;
+import com.av.ds.tree.TreeNode;
 import java.util.List;
 
 public class BFSTraversal {

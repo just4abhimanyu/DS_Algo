@@ -3,7 +3,7 @@ package com.av.ds.string;
 public class StringPalindrome {
     private static char convertToLowerCase(char ch){
         if(ch >= 65 && ch <= 90){
-            return ch = (char) (ch + 32);
+            return (char) (ch + 32);
         }
         return ch;
     }

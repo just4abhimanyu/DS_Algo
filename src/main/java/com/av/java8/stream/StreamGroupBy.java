@@ -3,6 +3,7 @@ package com.av.java8.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamGroupBy {
@@ -30,5 +31,23 @@ public class StreamGroupBy {
         );
         getDataGroupBy(people);
         System.out.println("people= "+people);
+
+        getStringsGroupByLengthByStream(new String[]{"cat","mat","mango","dogyy","ab"});
+        getStringsGroupByNumber();
+    }
+
+    private static void getStringsGroupByLengthByStream(String[] strings){
+        Map<Integer, List<String>> stringFrequency = Arrays.stream(strings).collect(Collectors.groupingBy(String::length));
+        System.out.println(stringFrequency);
+
+    }
+
+    private static void getStringsGroupByNumber(){
+        List<String> sentences = Arrays.asList("apple banana", "banana orange", "apple grape");
+        Map<String, List<String>> strings = sentences.stream().flatMap( str -> Arrays.stream(str.split(" "))).collect(Collectors.groupingBy(Function.identity()));
+        System.out.println("Group by number of String : "+strings);
+        Map<String,Long> stringWithCount = sentences.stream().flatMap( str -> Arrays.stream(str.split(" "))).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println("Group by number of String with count : "+stringWithCount);
+
     }
 }

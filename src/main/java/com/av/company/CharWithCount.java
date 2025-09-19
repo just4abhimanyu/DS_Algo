@@ -5,6 +5,7 @@ public class CharWithCount {
     private static void printCharWithCount(String str){
         String resStr = "";
         int count = 1;
+
         for (int i = 1; i < str.length(); i++) {
 
             if (str.charAt(i) == str.charAt( i -1)){

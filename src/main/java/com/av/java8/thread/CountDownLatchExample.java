@@ -10,6 +10,7 @@ public class CountDownLatchExample {
 
 
     public static void main(String[] args) {
+
         CountDownLatchExample  latchExample = new CountDownLatchExample();
         int numberOfWorker = 3;
         CountDownLatch latch = new CountDownLatch(numberOfWorker);
@@ -34,7 +35,7 @@ public class CountDownLatchExample {
         }
 
         try {
-            latch.await();// Main thread waits until the latch count reaches zero
+            latch.await();// CreateSubMatrixOfMatrix thread waits until the latch count reaches zero
         }catch (InterruptedException e){
             Thread.currentThread().interrupt();
         }
@@ -52,7 +53,7 @@ of await return immediately.
 Explanation:
 CountDownLatch Initialization: The CountDownLatch is created with a count of numberOfWorkers, which is 3 in this case.
 Worker Threads: Three worker threads are started. Each thread runs the Worker class, which performs some work (simulated by Thread.sleep(2000)) and then calls latch.countDown() to decrement the latch's count.
-Main Thread:The main thread calls latch.await(), which blocks until the latch's count reaches zero.
+CreateSubMatrixOfMatrix Thread:The main thread calls latch.await(), which blocks until the latch's count reaches zero.
 Once all worker threads have finished their tasks and called countDown(), the latch's count reaches zero, and the main thread proceeds to print the final message.
 
 CountDownLatch is useful in scenarios where you want to wait for a certain number of events or operations
