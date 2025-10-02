@@ -10,15 +10,19 @@ public class ExecutorServiceExample {
         count++;
     }
     public static void main(String[] args) {
+
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         ExecutorServiceExample serviceExample = new ExecutorServiceExample();
+
         for (int i = 0; i <20; i++) {
+
             Runnable task = ()->{
               try {
                   serviceExample.counter();;
 
                   System.out.println("Executing task in "+Thread.currentThread().getName()+" counter ->"+serviceExample.count);
                   TimeUnit.SECONDS.sleep(2);
+
               }catch (InterruptedException e){
                 Thread.currentThread().interrupt();
                   System.out.println("Task interrupted");

@@ -16,6 +16,15 @@ public class KthSmallestElementInSortedMatrix {
             this.row = row;
             this.column = column;
         }
+
+        @Override
+        public String toString() {
+            return "Element{" +
+                    "value=" + value +
+                    ", row=" + row +
+                    ", column=" + column +
+                    '}';
+        }
     }
 
     private static int kthSmallest(int[][] matrix , int kthEle){
@@ -28,7 +37,7 @@ public class KthSmallestElementInSortedMatrix {
         for (int i = 0; i < len; i++) {
             minHeap.offer(new Element(matrix[i][0] , i , 0));
         }
-
+    System.out.println(minHeap);
         // Extract the smallest element from the heap k times
         Element current = null;
         for (int i = 0; i < kthEle; i++) {
@@ -38,6 +47,7 @@ public class KthSmallestElementInSortedMatrix {
                 minHeap.offer(new Element(matrix[current.row][nextColumn],current.row ,nextColumn));
             }
         }
+        System.out.println(minHeap);
        // assert current != null;
         return current.value;
     }

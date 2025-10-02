@@ -14,8 +14,13 @@ public class GetCommonLeafNode {
     public static boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
+
         getCommonLeaf(root1 , list1);
         getCommonLeaf(root2 , list2);
+
+        System.out.println("list1 : "+list1);
+        System.out.println("list2 : "+list2);
+
         return list1.equals(list2);
     }
     private static void getCommonLeaf(TreeNode root , List<Integer> leafNodes ){

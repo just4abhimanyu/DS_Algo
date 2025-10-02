@@ -68,7 +68,7 @@ public class StreamFlatMap {
                                                             Stream.of(7, 8,8, 9)
                                                             );
 
-        List<Integer> flattenedStream = streamOfStreams.flatMap(Function.identity()).toList();
+        List<Integer> flattenedStream = streamOfStreams.flatMap (Function.identity()).toList();
         System.out.println("Stream of Stream "+flattenedStream);
     }
     public static void main(String[] args) {
