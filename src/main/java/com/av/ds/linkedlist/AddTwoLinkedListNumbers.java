@@ -4,6 +4,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class AddTwoLinkedListNumbers {
+
+    public Node addTwoNumbersBestWay(Node l1, Node l2) {
+        Node dummy = new Node(0);
+        Node curr = dummy;
+        int carry = 0;
+
+        while (l1 != null || l2 != null || carry != 0) {
+            int x = (l1 != null) ? l1.data : 0;
+            int y = (l2 != null) ? l2.data : 0;
+            int sum = x + y + carry;
+
+            carry = sum / 10;
+            curr.next = new Node(sum % 10);
+            curr = curr.next;
+
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+StringBuilder sb = new StringBuilder();
+        sb.length();
+        return dummy.next;
+    }
     private Node addNode(Node head, int data) {
 
         Node newNode = new Node(data);
@@ -55,7 +77,7 @@ private Node addElement(int[] arr){
         Node resultNode = new Node(0);
         Node ptr = resultNode;
         while(list1 != null || list2 != null){
-            int sum = 0 + carry;
+            int sum = carry;
 
             if(list1 !=null){
                 sum += list1.data;
@@ -67,7 +89,7 @@ private Node addElement(int[] arr){
                 list2 = list2.next;
             }
 
-      carry = sum/10;
+            carry = sum/10;
             sum %= 10;
 
             ptr.next = new Node(sum);
