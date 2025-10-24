@@ -27,13 +27,14 @@ public class SortFixThreeTypeOfElement {
                 swap(arr, currentIndex, zeroIndex);
                 zeroIndex++; // move zero index to right
                 currentIndex++; // move current index to right
-            }else if(arr[currentIndex] == 2){
+            }else if(arr[currentIndex] == 1){
+                currentIndex++; // if element is 1 just move current index to right
+            }else {
                 // swap with two index
                 swap(arr, currentIndex, twoIndex);
                 twoIndex--; // move two index to left
                 // do not move current index because the swapped element needs to be checked
-            }else {
-                currentIndex++; // if element is 1 just move current index to right
+
             }
         }
     }
