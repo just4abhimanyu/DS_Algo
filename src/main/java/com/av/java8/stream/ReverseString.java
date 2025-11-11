@@ -19,7 +19,6 @@ public class ReverseString {
 
         Object[] reversedArray = IntStream.range(0, str.length())
                 .mapToObj(i -> str.charAt(str.length() - i - 1))
-                .map(Character::valueOf)
                 .toArray();
         String reversed = Arrays.toString(reversedArray);
         System.out.println("Reversed 4 string: " + reversed);
